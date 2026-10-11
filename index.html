@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marker316_ink | 個人網站</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 動態漸層背景動畫 */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animated-bg {
+            background: linear-gradient(-45deg, #fef6f0, #e8f4f8, #f0f8f1, #fdf6ec);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+    </style>
+</head>
+<body class="animated-bg text-stone-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- 頂部導航欄 (半透明玻璃擬態) -->
+    <header class="bg-white/80 backdrop-blur-md border-b border-stone-200/60 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="#home" class="text-xl font-bold tracking-tight text-stone-900 flex items-center gap-2">
+                <span class="w-3 h-3 bg-emerald-600 rounded-full inline-block shadow-sm"></span>
+                marker316_ink
+            </a>
+            <nav class="hidden md:flex items-center space-x-1 text-sm font-medium">
+                <button onclick="switchTab('home')" class="nav-btn px-3 py-2 rounded-lg text-emerald-700 bg-emerald-50 transition" data-target="home">首頁</button>
+                <button onclick="switchTab('about')" class="nav-btn px-3 py-2 rounded-lg text-stone-600 hover:bg-stone-100 transition" data-target="about">關於網站</button>
+                <button onclick="switchTab('threads')" class="nav-btn px-3 py-2 rounded-lg text-stone-600 hover:bg-stone-100 transition" data-target="threads">Threads</button>
+                <button onclick="switchTab('scenery')" class="nav-btn px-3 py-2 rounded-lg text-stone-600 hover:bg-stone-100 transition" data-target="scenery">風景</button>
+                <button onclick="switchTab('travel')" class="nav-btn px-3 py-2 rounded-lg text-stone-600 hover:bg-stone-100 transition" data-target="travel">到處走走</button>
+                <button onclick="switchTab('reading')" class="nav-btn px-3 py-2 rounded-lg text-stone-600 hover:bg-stone-100 transition" data-target="reading">閱讀</button>
+                <button onclick="switchTab('study')" class="nav-btn px-3 py-2 rounded-lg text-stone-600 hover:bg-stone-100 transition" data-target="study">學習</button>
+            </nav>
+            <button onclick="toggleMobileMenu()" class="md:hidden text-stone-600 text-xl"><i class="fa-solid fa-bars"></i></button>
+        </div>
+        <!-- 手機折疊菜單 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-b border-stone-200 px-4 py-2 space-y-1">
+            <button onclick="switchTab('home'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 text-emerald-700 font-medium">首頁</button>
+            <button onclick="switchTab('about'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 text-stone-600">關於網站</button>
+            <button onclick="switchTab('threads'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 text-stone-600">Threads</button>
+            <button onclick="switchTab('scenery'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 text-stone-600">風景</button>
+            <button onclick="switchTab('travel'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 text-stone-600">到處走走</button>
+            <button onclick="switchTab('reading'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 text-stone-600">閱讀</button>
+            <button onclick="switchTab('study'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 text-stone-600">學習</button>
+        </div>
+    </header>
+
+    <!-- 主體內容 -->
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-8">
+
+        <!-- 1. 首頁 -->
+        <section id="view-home" class="tab-content space-y-10">
+            <div class="bg-gradient-to-r from-emerald-700 via-teal-700 to-stone-800 rounded-3xl p-8 md:p-12 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="space-y-4 text-center md:text-left">
+                    <span class="bg-white/20 text-emerald-100 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Welcome！</span>
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">marker316_ink</h1>
+                    <p class="text-emerald-100 text-lg max-w-xl">歡迎關注我的個人空間。這裡彙聚了我的日常隨筆、風景攝影、閱讀心得與生活足跡。</p>
+                </div>
+                <div class="flex flex-wrap gap-3 justify-center">
+                    <a href="https://youtube.com/@markermok8661?si=kLAQf58yBR3KChiH" target="_blank" class="bg-white text-stone-900 hover:bg-emerald-50 px-4 py-3 rounded-xl font-medium shadow transition flex items-center gap-2">
+                        <i class="fa-brands fa-youtube text-red-600"></i> YouTube
+                    </a>
+                    <a href="https://www.instagram.com/marker316_ink" target="_blank" class="bg-white text-stone-900 hover:bg-emerald-50 px-4 py-3 rounded-xl font-medium shadow transition flex items-center gap-2">
+                        <i class="fa-brands fa-instagram text-pink-600"></i> Instagram
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100016213062802" target="_blank" class="bg-white text-stone-900 hover:bg-emerald-50 px-4 py-3 rounded-xl font-medium shadow transition flex items-center gap-2">
+                        <i class="fa-brands fa-facebook text-blue-600"></i> Facebook
+                    </a>
+                    <a href="https://www.threads.net/@eternal316_ink" target="_blank" class="bg-white text-stone-900 hover:bg-emerald-50 px-4 py-3 rounded-xl font-medium shadow transition flex items-center gap-2">
+                        <i class="fa-brands fa-threads text-black"></i> Threads
+                    </a>
+                </div>
+            </div>
+
+            <!-- 快捷入口卡片 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div onclick="switchTab('scenery')" class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md cursor-pointer transition space-y-2">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-lg"><i class="fa-solid fa-mountain-sun"></i></div>
+                    <h3 class="font-bold text-stone-900 text-lg">風景攝影</h3>
+                    <p class="text-xs text-stone-500">欣賞鏡頭下的自然光影與美好瞬間。</p>
+                </div>
+                <div onclick="switchTab('threads')" class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md cursor-pointer transition space-y-2">
+                    <div class="w-10 h-10 rounded-xl bg-stone-100 text-stone-900 flex items-center justify-center text-lg"><i class="fa-brands fa-threads"></i></div>
+                    <h3 class="font-bold text-stone-900 text-lg">Threads 碎碎念</h3>
+                    <p class="text-xs text-stone-500">即時心情與短文對話。</p>
+                </div>
+                <div onclick="switchTab('reading')" class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md cursor-pointer transition space-y-2">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center text-lg"><i class="fa-solid fa-book-open"></i></div>
+                    <h3 class="font-bold text-stone-900 text-lg">閱讀筆記</h3>
+                    <p class="text-xs text-stone-500">書本摘錄與吸收的心得。</p>
+                </div>
+                <div onclick="switchTab('travel')" class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md cursor-pointer transition space-y-2">
+                    <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg"><i class="fa-solid fa-compass"></i></div>
+                    <h3 class="font-bold text-stone-900 text-lg">到處走走</h3>
+                    <p class="text-xs text-stone-500">旅行軌跡與城市漫遊紀錄。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 關於網站 (完美對應您的原版截圖風格) -->
+        <section id="view-about" class="tab-content hidden space-y-8 max-w-4xl mx-auto">
+            
+            <!-- 深色幾何 Banner -->
+            <div class="relative bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 text-white rounded-3xl overflow-hidden shadow-xl min-h-[220px] flex items-center justify-between px-8 md:px-14 py-10">
+                <div class="relative z-10">
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-widest text-stone-100">關於網站</h1>
+                </div>
+                <div class="flex items-center gap-3 relative z-10">
+                    <a href="https://youtube.com/@markermok8661?si=kLAQf58yBR3KChiH" target="_blank" class="w-9 h-9 rounded-full bg-stone-700/80 hover:bg-stone-600 text-stone-200 flex items-center justify-center text-base transition">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100016213062802" target="_blank" class="w-9 h-9 rounded-full bg-stone-700/80 hover:bg-stone-600 text-stone-200 flex items-center justify-center text-base transition">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/marker316_ink" target="_blank" class="w-9 h-9 rounded-full bg-stone-700/80 hover:bg-stone-600 text-stone-200 flex items-center justify-center text-base transition">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="absolute inset-0 bg-stone-900/40 pointer-events-none"></div>
+                <div class="absolute -left-10 -bottom-20 w-64 h-64 bg-stone-700/20 rounded-full blur-2xl"></div>
+            </div>
+
+            <!-- 黃色醒目條 -->
+            <div class="h-1.5 w-full bg-amber-400 rounded-full shadow-sm"></div>
+
+            <!-- 文字說明框 -->
+            <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-stone-200/80 shadow-sm">
+                <p class="text-stone-700 leading-relaxed text-sm md:text-base tracking-wide">
+                    此網站的創立是用於分享日常的拍照生活，無其他的商業行為。如果各位看官老爺有什麼景點的推薦，也可以留言給作者，之後也會多出去走走，謝謝大家的支持。手殘黨，不喜勿噴。網站不定期更新，有拍到什麼就上傳什麼，真的隨性，所以別期待日更 o(╥~~╥)o
+                </p>
+            </div>
+
+            <!-- YouTube 嵌入影片區塊 (修復播放器設定) -->
+            <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-4 md:p-6 border border-stone-200/80 shadow-sm flex flex-col items-center">
+                <div class="w-full max-w-sm aspect-[9/16] rounded-2xl overflow-hidden shadow-md bg-black">
+                    <iframe 
+                        class="w-full h-full" 
+                        src="https://www.youtube-nocookie.com/embed/zW1VgewNTLo?rel=0" 
+                        title="＃京都水族館" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- 黃色按鈕群 -->
+            <div class="flex flex-wrap items-center justify-end gap-4 pt-2">
+                <a href="https://youtube.com/@markermok8661?si=kLAQf58yBR3KChiH" target="_blank" class="bg-amber-400 hover:bg-amber-500 text-stone-900 font-medium px-6 py-2.5 rounded-lg shadow-sm transition text-sm">
+                    YouTube
+                </a>
+                <a href="https://www.instagram.com/marker316_ink" target="_blank" class="bg-amber-400 hover:bg-amber-500 text-stone-900 font-medium px-6 py-2.5 rounded-lg shadow-sm transition text-sm">
+                    Instagram
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100016213062802" target="_blank" class="bg-amber-400 hover:bg-amber-500 text-stone-900 font-medium px-6 py-2.5 rounded-lg shadow-sm transition text-sm">
+                    Facebook
+                </a>
+            </div>
+
+        </section>
+
+        <!-- 3. Threads 專區 -->
+        <section id="view-threads" class="tab-content hidden space-y-6 max-w-2xl mx-auto">
+            <div class="flex items-center justify-between border-b border-stone-200/80 pb-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-stone-900">Threads 專區</h2>
+                    <p class="text-sm text-stone-500">還原真實動態與生活碎碎念。</p>
+                </div>
+                <a href="https://www.threads.net/@eternal316_ink" target="_blank" class="bg-stone-900 text-white hover:bg-stone-800 px-4 py-2 rounded-xl text-sm font-medium transition flex items-center gap-2">
+                    <i class="fa-brands fa-threads"></i> 前往我的 Threads 
+                </a>
+            </div>
+            
+            <div id="threads-container" class="space-y-6">
+                <!-- 由 JavaScript 動態生成 -->
+            </div>
+        </section>
+
+        <!-- 4. 風景 -->
+        <section id="view-scenery" class="tab-content hidden space-y-6">
+            <div class="border-b border-stone-200/80 pb-4">
+                <h2 class="text-3xl font-bold text-stone-900">隨手拍攝 (風景)</h2>
+                <p class="text-sm text-stone-500">鏡頭底下的光影、山海與自然風光。</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="scenery-gallery"></div>
+        </section>
+
+        <!-- 5. 到處走走 -->
+        <section id="view-travel" class="tab-content hidden space-y-12">
+            
+            <div class="relative rounded-3xl overflow-hidden shadow-lg h-72 md:h-96 flex items-center justify-center bg-stone-900">
+                <img src="walk/unnamed (1).jpg" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/30 to-transparent"></div>
+                <div class="relative z-10 text-center space-y-3 px-4">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-widest drop-shadow-md">到處走走</h1>
+                    <p class="text-stone-200 text-sm md:text-base tracking-wide font-light">旅行足跡、展覽見聞與生活漫遊紀錄</p>
+                </div>
+            </div>
+
+            <!-- 三星堆博物館之旅 -->
+            <div class="space-y-6">
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-stone-200/80 shadow-sm space-y-4">
+                    <div class="h-80 md:h-[420px] rounded-2xl overflow-hidden shadow-inner bg-stone-100">
+                        <img src="walk/unnamed (3).jpg" alt="你好，三星堆" class="w-full h-full object-cover hover:scale-105 transition duration-700">
+                    </div>
+                    <div class="text-center py-2">
+                        <h3 class="text-xl md:text-2xl font-bold text-stone-900 tracking-wide">你好，三星堆</h3>
+                        <p class="text-stone-500 text-sm mt-1">穿越千年的古蜀文明對話</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm"><div class="h-60 overflow-hidden bg-stone-100"><img src="walk/unnamed (2).jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div></div>
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm"><div class="h-60 overflow-hidden bg-stone-100"><img src="walk/unnamed (4).jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div></div>
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm"><div class="h-60 overflow-hidden bg-stone-100"><img src="walk/unnamed (5).jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm"><div class="h-60 overflow-hidden bg-stone-100"><img src="walk/unnamed (6).jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div></div>
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm"><div class="h-60 overflow-hidden bg-stone-100"><img src="walk/unnamed (7).jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div></div>
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm"><div class="h-60 overflow-hidden bg-stone-100"><img src="walk/unnamed (8).jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div></div>
+                </div>
+            </div>
+
+            <!-- 萬物有靈 -->
+            <div class="space-y-6 pt-6">
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-stone-200/80 shadow-sm space-y-4">
+                    <div class="h-80 md:h-[420px] rounded-2xl overflow-hidden shadow-inner bg-stone-100">
+                        <img src="walk/unnamed.jpg" alt="萬物有靈" class="w-full h-full object-cover hover:scale-105 transition duration-700">
+                    </div>
+                    <div class="text-center py-2">
+                        <h3 class="text-xl md:text-2xl font-bold text-stone-900 tracking-wide">萬物有靈</h3>
+                        <p class="text-stone-500 text-sm mt-1">捕捉動物們療癒的日常瞬間</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm"><div class="h-60 overflow-hidden bg-stone-100"><img src="walk/unnamed (1).jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div></div>
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm"><div class="h-60 overflow-hidden bg-stone-100"><img src="walk/unnamed (9).jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div></div>
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm"><div class="h-60 overflow-hidden bg-stone-100"><img src="walk/unnamed (10).jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm"><div class="h-60 overflow-hidden bg-stone-100"><img src="walk/unnamed (11).jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div></div>
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm"><div class="h-60 overflow-hidden bg-stone-100"><img src="walk/unnamed (12).jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div></div>
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm"><div class="h-60 overflow-hidden bg-stone-100"><img src="walk/unnamed (13).jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm"><div class="h-60 overflow-hidden bg-stone-100"><img src="walk/unnamed (14).jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div></div>
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm"><div class="h-60 overflow-hidden bg-stone-100"><img src="walk/unnamed (15).jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div></div>
+                </div>
+            </div>
+
+            <!-- 影音紀錄專區 -->
+            <div class="space-y-6 pt-6">
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-stone-200/80 shadow-sm space-y-4">
+                    <div class="h-80 md:h-[420px] rounded-2xl overflow-hidden shadow-inner bg-stone-100 flex items-center justify-center relative">
+                        <video src="walk/9-1.mp4" autoplay muted loop playsinline class="w-full h-full object-cover pointer-events-none"></video>
+                    </div>
+                    <div class="text-center py-2">
+                        <h3 class="text-xl md:text-2xl font-bold text-stone-900 tracking-wide">行旅動態影像</h3>
+                        <p class="text-stone-500 text-sm mt-1">在這山，望那山</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 6. 閱讀 -->
+        <section id="view-reading" class="tab-content hidden space-y-6 max-w-3xl mx-auto">
+            <div>
+                <h2 class="text-3xl font-bold text-stone-900">閱讀筆記</h2>
+                <p class="text-sm text-stone-500">書本摘錄與心得分享。</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-stone-200/80 shadow-sm space-y-2">
+                    <span class="text-xs text-indigo-700 font-semibold bg-indigo-50 px-2.5 py-1 rounded-full">讀書心得</span>
+                    <h3 class="text-xl font-bold text-stone-900">《你當像鳥飛往你的山》</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">教育賦予了人擺脫原生環境限制的視角與力量。</p>
+                </div>
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-stone-200/80 shadow-sm space-y-2">
+                    <span class="text-xs text-indigo-700 font-semibold bg-indigo-50 px-2.5 py-1 rounded-full">讀書筆記 (2023-07-26)</span>
+                    <h3 class="text-xl font-bold text-stone-900">《想把餘生的溫柔都給你》</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed whitespace-pre-line">妳還能怎麼樣呢？其實妳並不能怎麼樣。
+一個人的去留，是妳如何都沒有辦法阻止的，妳既不能強迫他留下，也不能死皮賴臉地挽留，當所有的愛殆盡，他要走，就已經做好了不回頭的準備。
+會留的人不會走，會走的人不回頭，也不能說是誰的對錯，只是有些人，走過的時候引起了滾滾灰塵，注定只能成為妳的過客。
+妳只能接受，多難堪的事實，也要學會去接受。
+接受失去，接受離別，接受錯過，接受遺憾的發生，接受被回憶折磨，接受那些曾經動人的故事，接受生存或是生活，接受悲傷逆流成河，接受支離破碎，接受死亡並不遙遠，接受難堪的自己。
+說穿了，既然事情已經發生了，除了接受，原來我們別無他擇。</p>
+                </div>
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-stone-200/80 shadow-sm space-y-2">
+                    <span class="text-xs text-indigo-700 font-semibold bg-indigo-50 px-2.5 py-1 rounded-full">讀書筆記 (2023-07-25)</span>
+                    <h3 class="text-xl font-bold text-stone-900">《想把餘生的溫柔都給你》</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed whitespace-pre-line">陪伴一個人不需要任何的理由，
+不為了得到同樣的回報，不為餘生的加冕，不為不落的誓言，不為煙花的墜落，不為海浪的淘覆，
+只為此時此刻的星辰夏末，只為今朝的一醉方休。</p>
+                </div>
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-stone-200/80 shadow-sm space-y-2">
+                    <span class="text-xs text-indigo-700 font-semibold bg-indigo-50 px-2.5 py-1 rounded-full">讀書筆記 (2023-07-22)</span>
+                    <h3 class="text-xl font-bold text-stone-900">《想把餘生的溫柔都給你》</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed whitespace-pre-line">然而，在這個來去如飛的世界裡，只有陪伴是一塵不染的安定，流竄不滅的真心。人們說，陪伴是最長久的告白。
+所以，我好想對你說，我擁有的不多，也不想給什麼承諾，我知道那些都很遙遠，也許有一天會來不及實現，可是我給你相濡以沫的陪伴，任春水流蕩，時光散漫，都如最初那樣。
+從此之後，天涯海角我陪伴你，無論四季也不問朝夕。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. 學習 -->
+        <section id="view-study" class="tab-content hidden space-y-6 max-w-3xl mx-auto">
+            <div>
+                <h2 class="text-3xl font-bold text-stone-900">學習成長</h2>
+                <p class="text-sm text-stone-500">技能提升與技術筆記。</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-stone-200/80 shadow-sm space-y-2">
+                    <span class="text-xs text-amber-700 font-semibold bg-amber-50 px-2.5 py-1 rounded-full">技能提升</span>
+                    <h3 class="text-xl font-bold text-stone-900">網站改版升級</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">將 Google Sites 的內容整合至現代化獨立網頁中。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 頁腳 -->
+    <footer class="bg-white/85 border-t border-stone-200/80 mt-16 py-8 text-center text-sm text-stone-500 backdrop-blur-sm">
+        <p>&copy; 2026 marker316_ink. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript 邏輯與完整動態數據 -->
+    <script>
+        const threadsProfileUrl = "https://www.threads.net/@eternal316_ink";
+
+        const threadsPosts = [
+            {
+                date: "2026-10-10",
+                text: "10/10/2026 🌅",
+                images: ["threads/10-1.webp", "threads/10-2.webp", "threads/10-3.webp", "threads/10-4.webp"]
+            },
+            {
+                date: "2026-06-22",
+                text: "",
+                images: [
+                    "threads/9-2.webp", "threads/9-3.webp", 
+                    "threads/9-6.webp", 
+                    "threads/9-8.webp", "threads/9-9.webp", 
+                    "threads/9-10.webp", "threads/9-12.webp", 
+                    "threads/9-14.webp", "threads/9-15.webp"
+                ]
+            },
+            {
+                date: "2026-05-27",
+                text: "",
+                images: ["threads/8-1.webp", "threads/8-2.webp"]
+            },
+            {
+                date: "2026-05-04",
+                text: "人生路漫漫其修遠兮，吾將隨意而安。\n\n都說人生百態，所見所得不過是一場又一場過眼雲煙。\n這一年，大概是從「相信計劃」到「接受意外」的過渡期。以前總覺得按部就班就能百分百成功，可世事怎會盡如人意？就像看日出——查好了時間，算準了天氣，也可能只等來一片灰蒙蒙的雲。那些真正看見日出的時刻，從來不是精心安排的結果，只是剛好在那裡，剛好太陽願意露臉，剛好碰見彩雲的灑脫、海風的瀟灑罷了。\n東坡說，蓋將自其變者而觀之，則天地曾不能以一瞬；自其不變者而觀之，則物與我皆無盡也。既然萬物都在流轉，悲歡離合、人來人往本就是常態，又何必執著？或許成長，就是在一攻攻相遇與告別中，學會把目光從「留住什麼」，轉向「途經了什麼」。\n人生不過是一場路程，總會有人離開，也總會有人加入。能一起走過一段路，看過一段風景，已是難得的交集。不必在意聚散的長短，只在乎途中風景——不論人或景，一來一去間，也就成長了。\n如今不再強求什麼了，只渴望平平淡淡，隨意而安。就如一位朋友所說，今時今日，能出來吃個飯、見個面，已經算是萬幸之事。\n願來去隨風，安之若素。",
+                images: ["threads/7-1.webp", "threads/7-2.webp"]
+            },
+            {
+                date: "2026-02-11",
+                text: "今天又讀到一句\n「這雨生於天，而死於地，中間的過程便是一生。我之所以看這雨水，不看天、不看地。看的也不是雨，而是這雨的一生。」\n又可以用在文裡面了(⁠⁠̂⁠o⁠̂⁠)⁠ Denmark",
+                images: []
+            },
+            {
+                date: "2025-01-13",
+                text: "我啊，好像一直在原地踏步，從未離開過。\n即便見到蔚藍的天空、百變的白雲、燦爛的星河，但我就像是向日葵般，雖可看到四處的風景，但卻停留在地。\n有時候覺得活的好迷茫，找不到方向。\n活著...到底是為了什麼？我是誰？為何而來？為何而去？",
+                images: ["threads/6-1.jpg", "threads/6-2.jpg", "threads/6-3.jpg"]
+            },
+            {
+                date: "2024-09-02",
+                text: "",
+                images: ["threads/4-1.jpg", "threads/4-2.jpg"]
+            },
+            {
+                date: "2024-06-13",
+                text: "突然發現「死亡並不是失去了生命，而是停留在時間裡。」\n人一出生邊開始與世界有了聯繫，但因為剛剛出生，所以關聯不多，時間也就抓不住嬰兒，所以嬰兒時期的你，會覺得時間過得很快。\n但後來，隨著年齡越來越大，留在這個世界上的痕跡越來越多，時間和你的摩擦力就越來越大，你感覺時間好像過得很慢。\n再後來，到了生命的盡頭，時間就牢牢抓住你，你也不能再繼續走下去，所以你的生命就此結束了。在別人看來，你離開了人世，但只有你自己知道，你留在了死亡時的那一刻。",
+                images: []
+            },
+            {
+                date: "2023-07-28",
+                text: "早安，巴卡瑪卡~",
+                images: ["threads/3-1.jpg"]
+            },
+            {
+                date: "2023-07-25",
+                text: "宮崎駿說過：“如果你喜歡一個人的話，你就主動多朝他走幾步，如果他看到你走過來，卻沒有要迎接收你的意思，那你就停下來，因為你要懂得，很多事情都可以靠努力得來，唯獨愛情不可以。”\n\n我夢見了妳起碼有三次吧（可能更多吧），但每一次妳在喊我名字的時候，我都裝作沒聽到。\n妳向我走了好幾步，我卻一步都沒回應... 這可能就是我活該單身的原因吧...\n我在想，難道是因為我討厭妳而不做出回應？但每次醒來都是是淚水伴身啊！可我為什麼不做出回應？我也不知道...\n真希望下次夢見的時候，來一個美好的結局吧，別再虐文了...",
+                images: []
+            },
+            {
+                date: "2023-07-25",
+                text: "思緒回到作家來訪的那一天...\n作家問我，如果你要寫海灘，你該怎麼寫\n我答，藍天白雲、日出日落、海風海水。\n隨後我頓了一下，繼續說，準確來說，應該是時間用日落，照耀著霞雲，海風輕輕吹拂起她的頭髮，海水怕打著海面上的礁石，她正坐在沙灘上看著遠方的雲彩，而我在望向她。\n作者愣了一下，說道，大家要記住這個同學，原來他喜歡這種浪漫的景色，女同學們小心不要被他所騙了。\n隨後哄堂大笑，看向後方，眼中盡是柔光。\n\n窗外下了雨，她沒看我，我也沒看雨，那一刻，心死如灰。\n南有喬木，不可休思。漢有游女，不可求思。",
+                images: []
+            },
+            {
+                date: "2023-07-13",
+                text: "有時候慢慢來也是一個不錯的選擇，比如慢慢的釋懷...\n當聽到真相的那一刻，其實對與錯其實也沒那麼重要，也變得無所謂了，該怎麼釋懷才是最大的難點。\n慶幸的是，在知道之前就已經想過如果真的如所想，那我又該如何是好？這可能就是未雨綢繆的好處吧。",
+                images: ["threads/2-1.jpg", "threads/2-2.jpg"]
+            },
+            {
+                date: "2023-07-12",
+                text: "如果你要寫暗戀，就不能只寫暗戀。\n要寫看過的背影，繞路的偶遇，來由的情緒，和沒立場的脾氣，要寫微風，寫側顏，寫跟著你身後走過的路，寫好像下雨了的下雨天，寫聽到的名字，寫條件反射的抬頭，寫無數次的遠眺，寫小心翼翼，寫愛而不得，寫釋懷，寫顒轉側，寫期待，寫失落，寫一開始便知道的結局。\n寫明知不可為而為之的義無反顧，寫她的名字...",
+                images: []
+            },
+            {
+                date: "2023-07-10",
+                text: "重拾舊書坐在窗前慢慢著看，陽光穿透窗戶照在書上，微風慢慢吹來，這可能才是夏天的味道吧。",
+                images: ["threads/1.jpg"]
+            }
+        ];
+
+        const sceneryData = [
+            { title: "雨後海棠", date: "2024-01-02 (13:59)", img: "images/unnamed.jpg" },
+            { title: "冬天楓樹", date: "2024-03-08 (14:09)", img: "images/unnamed (1).jpg" },
+            { title: "雨後日落", date: "2021-07-24 (18:44)", img: "images/unnamed (2).jpg" },
+            { title: "伏見稻荷大社", date: "2024-05-18 (20:19)", img: "images/unnamed (3).jpg" },
+            { title: "水母 (一)", date: "2024-05-18 (13:01)", img: "images/unnamed (4).jpg" },
+            { title: "水母 (二)", date: "2024-05-18 (13:00)", img: "images/unnamed (5).jpg" },
+            { title: "高速上的黃昏", date: "2024-08-06 (19:05)", img: "images/unnamed (6).jpg" },
+            { title: "最後的離別", date: "2024-08-14 (18:30)", img: "images/unnamed (7).jpg" },
+            { title: "胡桃里的夜景", date: "2024-08-19 (19:21)", img: "images/unnamed (8).jpg" },
+            { title: "岩前村門", date: "2024-08-28 (19:51)", img: "images/unnamed (9).jpg" },
+            { title: "白雲", date: "2024-08-30 (18:02)", img: "images/unnamed (10).jpg" },
+            { title: "三門仔的日出", date: "2024-08-31 (06:26)", img: "images/unnamed (11).jpg" },
+            { title: "建生的霞雲", date: "2024-09-04 (18:40)", img: "images/unnamed (12).jpg" },
+            { title: "黑白交接", date: "2025-11-16 (16:45)", img: "images/unnamed (13).jpg" },
+            { title: "黑煙密佈", date: "2025-11-26 (17:55)", img: "images/unnamed (14).jpg" },
+            { title: "一行白鷺上青天", date: "2026-01-01 (07:47)", img: "images/unnamed (15).jpg" },
+            { title: "夕陽下的途人", date: "2026-01-18 (17:29)", img: "images/unnamed (16).jpg" },
+            { title: "巴士上的剪影", date: "2026-01-18 (17:32)", img: "images/unnamed (17).jpg" }
+        ];
+
+        window.onload = function() {
+            const gallery = document.getElementById('scenery-gallery');
+            if (gallery) {
+                gallery.innerHTML = sceneryData.map(item => `
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm hover:shadow-md transition">
+                        <div class="h-60 overflow-hidden bg-stone-100">
+                            <img src="${item.img}" alt="${item.title}" onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80'" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-4 space-y-1">
+                            <h4 class="font-bold text-stone-900 text-base">${item.title}</h4>
+                            <p class="text-xs text-stone-400"><i class="fa-regular fa-clock mr-1"></i> ${item.date}</p>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            const threadsContainer = document.getElementById('threads-container');
+            if (threadsContainer) {
+                threadsContainer.innerHTML = threadsPosts.map(post => `
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-stone-200/80 shadow-sm space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-stone-900 text-white flex items-center justify-center font-bold text-sm overflow-hidden">
+                                    <img src="avatar.jpg" alt="avatar" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-stone-900 text-sm flex items-center gap-1">
+                                        eternal316_ink <span class="text-blue-500 text-xs"><i class="fa-solid fa-circle-check"></i></span>
+                                    </h4>
+                                    <span class="text-xs text-stone-400">${post.date}</span>
+                                </div>
+                            </div>
+                            <a href="${threadsProfileUrl}" target="_blank" class="text-xs bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium px-3 py-1.5 rounded-lg transition flex items-center gap-1.5 shadow-sm">
+                                <i class="fa-brands fa-threads"></i> 前往我的 Threads
+                            </a>
+                        </div>
+                        ${post.text ? `<p class="text-stone-800 text-sm leading-relaxed whitespace-pre-line">${post.text}</p>` : ''}
+                        ${post.images.length > 0 ? `
+                            <div class="grid grid-cols-${post.images.length > 1 ? (post.images.length >= 3 ? '3' : '2') : '1'} gap-2 rounded-xl overflow-hidden bg-stone-100 max-h-[400px]">
+                                ${post.images.map(img => `<img src="${img}" class="w-full h-full object-cover">`).join('')}
+                            </div>
+                        ` : ''}
+                        <div class="flex items-center justify-between text-stone-400 text-xs pt-2 border-t border-stone-100">
+                            <div class="flex items-center gap-6">
+                                <a href="${threadsProfileUrl}" target="_blank" class="hover:text-red-500 transition flex items-center gap-1">
+                                    <i class="fa-regular fa-heart"></i> 讚
+                                </a>
+                                <a href="${threadsProfileUrl}" target="_blank" class="hover:text-blue-500 transition flex items-center gap-1 font-medium text-stone-600">
+                                    <i class="fa-regular fa-comment"></i> 回覆
+                                </a>
+                            </div>
+                            <a href="${threadsProfileUrl}" target="_blank" class="hover:text-stone-800 transition flex items-center gap-1">
+                                <span>在 Threads 上互動</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        };
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`view-${tabId}`).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                if(btn.getAttribute('data-target') === tabId) {
+                    btn.className = "nav-btn px-3 py-2 rounded-lg text-emerald-700 bg-emerald-50 font-semibold transition";
+                } else {
+                    btn.className = "nav-btn px-3 py-2 rounded-lg text-stone-600 hover:bg-stone-100 transition";
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
